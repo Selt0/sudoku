@@ -47,7 +47,7 @@ class Sudoku
   end
 
   def valid_val?(val)
-    val.is_a(Integer) && val.between?(0, 9)
+    val.is_a?(Integer) && val.between?(0, 9)
   end
 
   def play_turn
@@ -64,7 +64,7 @@ class Sudoku
   end
 
   def solved?
-    boaerd.solved?
+    board.solved?
   end
 
   private 
