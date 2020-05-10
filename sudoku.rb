@@ -50,6 +50,23 @@ class Sudoku
     val.is_a(Integer) && val.between?(0, 9)
   end
 
+  def play_turn
+    board.render
+    pos = get_pos
+    val = get_val
+    board[pos] = val
+  end
+
+  def run
+    play_turn until solved?
+    board.render
+    puts "Congrats, you win!"
+  end
+
+  def solved?
+    boaerd.solved?
+  end
+
   private 
   attr_reader :board
 end
