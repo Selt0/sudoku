@@ -25,6 +25,6 @@ class Tile
   end
 
   def color
-    given? ? :orange : :white
+    given? ? :cyan : :yellow
   end
 end
