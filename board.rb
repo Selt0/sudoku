@@ -67,6 +67,19 @@ class Board
       puts "#{i} #{row.join(' ') }"
     end
   end
+
+  def solved?
+    rows.all?{ |row| solved_set?(row) } &&
+    cols.all?{ |col| solved_set?(col) }  &&
+    squares.all?{ |sqaure| solved_set?(square) }
+  end
+
+  def solved_set?(tiles)
+    nums = tiles.map(&:value)
+
+    nums.sort == (1..9).to_a
+  end
+
   private
 
   attr_reader :board
