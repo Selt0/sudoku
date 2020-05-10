@@ -55,6 +55,18 @@ class Board
     tiles
   end
 
+  def render
+    grid = board.map do |row|
+      row.each do |tile|
+        tile.value
+      end
+    end
+
+    puts "  #{(0..8).to_a.join(' ')}"
+    grid.each_with_index do |row, i|
+      puts "#{i} #{row.join(' ') }"
+    end
+  end
   private
 
   attr_reader :board
