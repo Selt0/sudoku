@@ -56,14 +56,8 @@ class Board
   end
 
   def render
-    grid = board.map do |row|
-      row.each do |tile|
-        tile.value
-      end
-    end
-
     puts "  #{(0..8).to_a.join(' ')}"
-    grid.each_with_index do |row, i|
+    board.each_with_index do |row, i|
       puts "#{i} #{row.join(' ') }"
     end
   end
@@ -78,6 +72,10 @@ class Board
     nums = tiles.map(&:value)
 
     nums.sort == (1..9).to_a
+  end
+
+  def size
+    board.size
   end
 
   private
